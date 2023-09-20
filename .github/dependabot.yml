@@ -12,6 +12,8 @@ updates:
       day: "sunday"
       time: "16:00"
   - package-ecosystem: "npm"
+    directory: "/"
+  - package-ecosystem: "package.json"
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
