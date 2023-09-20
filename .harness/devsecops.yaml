@@ -22,8 +22,24 @@ pipeline:
             steps:
               - step:
                   type: Run
+                  name: Set up Node.js 14
+                  identifier: Run_3_2
+                  spec:
+                    shell: Sh
+                    command: |
+                      npx actions/setup-node@v2 --node-version 14
+                isAnyParentContainerStepGroup: false
+              - step:
+                  type: Run
                   name: Run_3_1
                   identifier: Run_3_1
+                  spec:
+                    shell: Sh
+                    command: npm install
+              - step:
+                  type: Run
+                  name: Run_3
+                  identifier: Run_3
                   spec:
                     shell: Sh
                     command: npm run build
