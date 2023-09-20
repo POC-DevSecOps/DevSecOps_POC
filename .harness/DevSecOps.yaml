@@ -1,0 +1,49 @@
+pipeline:
+  name: DevSecOps
+  identifier: DevSecOps
+  projectIdentifier: DevSecOps
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github_OAuth_1691491451111
+        repoName: DevSecOps_POC
+        build: <+input>
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    shell: Sh
+                    command: npm install
+              - step:
+                  type: Run
+                  name: Run_2
+                  identifier: Run_2
+                  spec:
+                    shell: Sh
+                    command: npm run test
+              - step:
+                  type: Run
+                  name: Run_3
+                  identifier: Run_3
+                  spec:
+                    shell: Sh
+                    command: npm run build
