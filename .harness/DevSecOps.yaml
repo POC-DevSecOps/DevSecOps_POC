@@ -8,7 +8,7 @@ pipeline:
     ci:
       codebase:
         connectorRef: account.Github_OAuth_1691491451111
-        repoName: DevSecOps_POC
+        repoName: POC-DevSecOps/DevSecOps_POC
         build: <+input>
   stages:
     - stage:
