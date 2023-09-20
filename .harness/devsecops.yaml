@@ -4,12 +4,6 @@ pipeline:
   projectIdentifier: DevSecOps
   orgIdentifier: default
   tags: {}
-  properties:
-    ci:
-      codebase:
-        connectorRef: account.Github_OAuth_1691491451111
-        repoName: DevSecOps_POC
-        build: <+input>
   stages:
     - stage:
         name: build
@@ -17,12 +11,12 @@ pipeline:
         description: ""
         type: CI
         spec:
-          cloneCodebase: true
+          cloneCodebase: false
           platform:
             os: Linux
             arch: Amd64
           runtime:
-            type: Cloud
+            type: Docker
             spec: {}
           execution:
             steps:
