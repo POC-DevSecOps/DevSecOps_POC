@@ -5,7 +5,20 @@
 
 version: 2
 updates:
-  - package-ecosystem: "" # See documentation for possible values
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "16:00"
+  - package-ecosystem: "npm"
     directory: "/" # Location of package manifests
     schedule:
-      interval: "Sunday"
+      interval: "weekly"
+      day: "sunday"
+      time: "16:00"
+    groups:
+      docker:
+         patterns:
+            - "github.com/docker/*"
+            - "github.com/moby/*"
