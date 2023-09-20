@@ -26,24 +26,25 @@ pipeline:
             spec: {}
           execution:
             steps:
-              - step:
-                  type: Run
-                  name: npm_install
-                  identifier: Run_1
-                  spec:
-                    shell: Sh
-                    command: npm install
-              - step:
-                  identifier: npm_test
-                  name: npm_test
-                  spec:
-                    command: npm run test
-                  timeout: ""
-                  type: Run
-              - step:
-                  type: Run
-                  name: npm_build
-                  identifier: Run_3
-                  spec:
-                    shell: Sh
-                    command: npm run build
+              - parallel:
+                  - step:
+                      identifier: npm_test
+                      name: npm_test
+                      spec:
+                        command: npm run test
+                      timeout: ""
+                      type: Run
+                  - step:
+                      type: Run
+                      name: npm_install
+                      identifier: Run_1
+                      spec:
+                        shell: Sh
+                        command: npm install
+                  - step:
+                      type: Run
+                      name: npm_build
+                      identifier: Run_3
+                      spec:
+                        shell: Sh
+                        command: npm run build
