@@ -22,15 +22,23 @@ pipeline:
             steps:
               - step:
                   type: Run
-                  name: Run_1
-                  identifier: Run_1
+                  name: Run_3
+                  identifier: Run_3
                   spec:
                     shell: Sh
-                    command: npm install
+                    command: |
+                      npx actions/setup-node@v2 --node-version 14
               - step:
                   type: Run
                   name: Run_2
                   identifier: Run_2
                   spec:
                     shell: Sh
-                    command: npm build
+                    command: npm install
+              - step:
+                  type: Run
+                  name: Run_3_1
+                  identifier: Run_3_1
+                  spec:
+                    shell: Sh
+                    command: npm run build
