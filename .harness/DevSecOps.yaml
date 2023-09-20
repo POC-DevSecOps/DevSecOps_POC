@@ -28,21 +28,21 @@ pipeline:
             steps:
               - step:
                   type: Run
-                  name: Run_1
+                  name: npm_install
                   identifier: Run_1
                   spec:
                     shell: Sh
                     command: npm install
               - step:
-                  type: Run
-                  name: Run_2
-                  identifier: Run_2
+                  identifier: npm_test
+                  name: npm_test
                   spec:
-                    shell: Sh
                     command: npm run test
+                  timeout: ""
+                  type: Run
               - step:
                   type: Run
-                  name: Run_3
+                  name: npm_build
                   identifier: Run_3
                   spec:
                     shell: Sh
