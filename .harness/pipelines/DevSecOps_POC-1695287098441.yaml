@@ -42,16 +42,6 @@ pipeline:
                     command: |
                       pip install bandit
                       bandit -r .
-              - step:
-                  type: Run
-                  name: Run_3
-                  identifier: Run_3
-                  spec:
-                    shell: Sh
-                    command: |
-                      npm install -g snyk
-                      snyk auth
-                      snyk test
           platform:
             arch: Amd64
             os: Linux
