@@ -66,13 +66,13 @@ jobs:
         uses: actions/checkout@v2
       - name: Set up Git
         run: |
-          git config --global user.email "jeeva.e@avasoft.com"
-          git config --global user.name "Ava-JeevaYovanE"
+          git config --global user.email "bhagyalakshmi.c@avasoft.com"
+          git config --global user.name "Ava-Bhagya"
       - name: Commands
         run: |
           git remote -v 
           git remote rm origin
-          git remote add origin https://github.com/Ava-JeevaYovanE/git.git
+          git remote add origin https://github.com/POC-DevSecOps/DevSecOps_POC.git
           git push --set-upstream -f origin main
           git checkout main
           git fetch --all
