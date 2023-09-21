@@ -28,9 +28,28 @@ pipeline:
                   identifier: npmtest
                   name: npm_test
                   spec:
-                    command: npm run test
+                    shell: Sh
+                    command: npm run build
                   timeout: ""
                   type: Run
+              - step:
+                  type: Run
+                  name: Run_4
+                  identifier: Run_4
+                  spec:
+                    shell: Sh
+                    command: |
+                      pip install bandit
+                      bandit -r .
+              - step:
+                  type: Run
+                  name: Run_3
+                  identifier: Run_3
+                  spec:
+                    shell: Sh
+                    command: |
+                      npm install -g snyk
+                      snyk test
           platform:
             arch: Amd64
             os: Linux
