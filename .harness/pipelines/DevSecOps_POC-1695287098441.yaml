@@ -29,7 +29,10 @@ pipeline:
                   name: npm_test
                   spec:
                     shell: Sh
-                    command: npm run build
+                    command: |-
+                      npm run build
+                      npm install -g serve
+                      serve -s build
                   timeout: ""
                   type: Run
               - step:
@@ -49,6 +52,7 @@ pipeline:
                     shell: Sh
                     command: |
                       npm install -g snyk
+                      snyk auth
                       snyk test
           platform:
             arch: Amd64
