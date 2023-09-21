@@ -22,9 +22,7 @@ pipeline:
                   name: npm_install
                   spec:
                     shell: Sh
-                    command: |-
-                      npm install
-                      npm audit fix --force
+                    command: npm install
                   timeout: ""
                   type: Run
               - step:
