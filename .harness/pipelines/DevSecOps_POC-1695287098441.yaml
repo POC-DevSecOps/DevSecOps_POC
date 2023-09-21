@@ -44,14 +44,11 @@ pipeline:
                       bandit -r .
               - step:
                   type: Run
-                  name: Run_3
-                  identifier: Run_3
+                  name: Run_5
+                  identifier: Run_5
                   spec:
                     shell: Sh
-                    command: |
-                      npm install -g snyk
-                      snyk auth
-                      snyk test
+                    command: npm audit fix --force
           platform:
             arch: Amd64
             os: Linux
