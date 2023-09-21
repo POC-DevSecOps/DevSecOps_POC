@@ -32,10 +32,7 @@ pipeline:
                   name: npm_test
                   spec:
                     shell: Sh
-                    command: |-
-                      npm run build
-                      npm install -g serve
-                      serve -s build -l 4000
+                    command: npm run build
                   timeout: ""
                   type: Run
               - step:
