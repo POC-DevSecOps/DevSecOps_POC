@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_DevSecOps_POC_1695287113438-push-trigger-input-set
+  identifier: Build_DevSecOps_POC_1695287113438pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_DevSecOps_POC_1695287113438
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
