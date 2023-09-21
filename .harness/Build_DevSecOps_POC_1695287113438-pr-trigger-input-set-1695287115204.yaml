@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_DevSecOps_POC_1695287113438-pr-trigger-input-set
+  identifier: Build_DevSecOps_POC_1695287113438prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_DevSecOps_POC_1695287113438
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
